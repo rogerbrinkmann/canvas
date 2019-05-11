@@ -1,7 +1,6 @@
 // definition of a circle prototype
-function Circle(x, y, r, velocity, color){
-  this.x = x; // x-coordinate
-  this.y = y; // y-coordinate
+function Circle(pos, r, velocity, color){
+  this.pos = pos;
   this.velocity = velocity;
   this.r = r;	// radius
   this.color = color	// color
@@ -10,13 +9,13 @@ function Circle(x, y, r, velocity, color){
   this.draw = function(){
     context.strokeStyle=this.color;
     context.beginPath();
-    context.arc(this.x, this.y, this.r, 0 , 2 * Math.PI);
+    context.arc(this.pos.x, this.pos.y, this.r, 0 , 2 * Math.PI);
     context.stroke();
   }
 
   this.update = function(){
-    this.x = this.x + this.velocity.x;
-    this.y = this.y + this.velocity.y;
+    this.pos.x = this.pos.x + this.velocity.x;
+    this.pos.y = this.pos.y + this.velocity.y;
   }
 }
 
@@ -60,4 +59,11 @@ class Vector{
     return this.yVal;
   }
 
+}
+
+class Point{
+  constructor(x,y){
+    this.x=x;
+    this.y=y;
+  }
 }
