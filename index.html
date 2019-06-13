@@ -1,15 +1,44 @@
 <html>
+
 <head>
 	<title>Canvas Experiment</title>
 	<style>
-		body{
-			margin:0;
+		body {
+			/* no margin, canvas can reach to the edge of screen  */
+			margin: 0;
 		}
+
+		.score{
+			position: absolute;
+			font-size: 50pt;
+			top: 10px;
+			z-index: 100;
+			display: block;
+			color: white;
+			font-family: sans-serif;
+			width: 50px;
+		}
+		.left {
+			left:100px;
+		}
+
+		.center{
+			left:200px;
+		}
+
+		.right{
+			left:300px;
+		}
+
 	</style>
 </head>
+
 <body>
-	<canvas id="draw"></canvas>
-	<script src="lib.js"></script>
-	<script src="script.js"></script>
+		<div id="left" class="score left">0</div>
+		<div id="center" class="score center">:</div>
+		<div id="right" class="score right">0</div>
+	<canvas id="pong"></canvas>
+	<script src="pong.js"></script>
 </body>
+
 </html>
